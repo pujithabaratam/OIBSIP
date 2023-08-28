@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Authentication Website</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fresca&display=swap" rel="stylesheet"> 
+    
+</head>
+<body>
+        
+        <style> {
+      background-color: antiquewhite; 
+      margin: 10% 20%;
+      color: #ecb8a5;
+      font-family: Arial, Helvetica, sans-serif;;
+    }
+    
+    h1 { 
+      padding-bottom: 2%;
+      font-size: 70px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    header {
+      padding: 0;
+      margin: 0 15%;
+      color: #678c90;
+    }
+    .Checkbox {
+      padding: 5% ;
+      margin: 3%;
+      background-color: #4c8590;
+      text-align: center;
+      border-radius: 20px;
+    }
+    
+    input, 
+    button {
+      margin: 2%;
+      border-radius: 15%;
+    }
+    
+    #imp {
+      padding-top: 5%;
+      display: none;
+    }
+    
+    #imp ul li {
+      text-align: left;
+    }
+    
+    #error {
+      color: red;
+      display : none;
+    }
+    </style>
+    <script>
+    function Show(id)
+    {
+      if (document.getElementById(id).style.display == 'none') {
+           document.getElementById(id).style.display = 'block';
+      }
+      else {
+           document.getElementById(id).style.display = 'none';
+      }
+    };
+    
+    //Submit Button
+    function Verify() {
+      var userRef = "Doremon";
+      var passRef = "13Doramehi";
+      
+      var user =  document.getElementById("user").value;
+      var pass = document.getElementById("password").value;
+      if (user == userRef || pass == passRef) {
+      alert("Connected!");
+      } else {
+      alert("Something went wrong!");
+      }
+    };
+    </script>
+      </head>
+      <body>
+        <header>
+         <h3>------Authentication Page Using Java Script------</h3>
+        </header>
+        <section class="Checkbox">
+          <h1>Authentication</h1>
+          <form action="#" method="post" name="authentication" id="authentication" class="authentication">
+            <label for="user">Enter Username :</label>
+            <input type="text" name="username" id="user" minlength="3" maxlenth="15" pattern="[a-zA-Z0-9]+" required>
+            <br>
+            <label for="password">Enter your Password :</label>
+            <input type="password" name="password" id="password" minlength="8" maxlength="15" pattern="[a-zA-Z0-9]+" required>
+            <br>
+            <input id="sub" type="submit" value="Submit" onclick="Verify();"></input>
+            <button id="rule" type="button" onclick="Show('imp');">Instructions</button>
+          </form>
+          <div id="imp">
+                   <ul>
+              <li>Username must involve 3 to 15 characters</li>
+              <li>Password must involve 8 to 15 characters</li>
+              <li>Numbers and letters only be used</li>
+            </ul>
+          </div>
+        </section>
+</body>
+</html>
